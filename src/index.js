@@ -1,7 +1,7 @@
-import npm from 'npm'
+var npm = require('npm')
 
-export default function conditionNPM(pluginConfig, config = {}, cb) {
-  const script = config.script || 'test'
+module.exports = function conditionNPM(pluginConfig, config, cb) {
+  var script = config.script || 'test'
 
   npm.load({loaded: false}, (err) => {
     if (err) { cb(err) }

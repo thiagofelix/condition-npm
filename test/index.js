@@ -1,15 +1,15 @@
-import chai from 'chai'
-import sinon from 'sinon'
-import conditionNPM from '../src'
+var chai = require('chai')
+var sinon = require('sinon')
+var conditionNPM = require('../src/index')
 
-describe('conditionNPM', () => {
-  context('valid script', () => {
-    it('runs successfully', (done) => {
+describe('conditionNPM', function () {
+  context('valid script', function() {
+    it('runs successfully', function(done) {
       conditionNPM(null, {script: 'hello-world'}, done)
     })
   })
-  context('invalid script', () => {
-    it('fails correctly', (done) => {
+  context('invalid script', function () {
+    it('fails correctly', function (done) {
       conditionNPM(null, {script: 'invalid'}, (err) => {
         chai.expect(err).to.be.an('error')
         done()
