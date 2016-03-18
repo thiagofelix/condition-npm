@@ -26,6 +26,7 @@
     "lint": "standard src test",
     "pretest": "npm run lint src",
     "test": "mocha --compilers js:babel-core/register -r babel-polyfill",
+    "prebuild": "npm run test",
     "build": "babel src --out-dir lib",
     "prerelease": "semantic-release pre",
     "postrelease": "semantic-release post",
